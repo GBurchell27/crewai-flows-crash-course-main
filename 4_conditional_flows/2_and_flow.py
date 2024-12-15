@@ -13,7 +13,7 @@ class AndExampleFlow(Flow):
         print("---- Second Method ----")
         self.state["joke"] = "What do computers eat? Microchips."
 
-    @listen(and_(start_method, second_method))
+    @listen(and_(start_method, second_method)) # This listens for both the start_method AND second_method to finish, ONLY THEN does it the logger function (prints the result)
     def logger(self):
         print("---- Logger ----")
         print(self.state)

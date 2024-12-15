@@ -1,7 +1,20 @@
+# This flow, StructuredExampleFlow, demonstrates a structured flow using CrewAI.
+# It uses Pydantic to define a state model with two fields: counter and message.
+# The flow consists of three methods: first_method, second_method, and third_method.
+# Each method is decorated with @listen() to indicate that it should execute after another method completes.
+# The flow is initiated by creating an instance of StructuredExampleFlow and calling the kickoff() method.
+# The final state is printed after the flow has completed.
+
+
+# Whats different from the unstructured flow. You need to define an initial state.
+# the initial state must be a Pydantic model.
+# Goal is to add structure to the flow.
+# 
+
 from crewai.flow.flow import Flow, listen, start
 from pydantic import BaseModel
 
-
+# Define the initial state as a Pydantic model
 class ExampleState(BaseModel):
     counter: int = 0
     message: str = ""
