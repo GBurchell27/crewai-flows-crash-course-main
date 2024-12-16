@@ -2,6 +2,12 @@ from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
 
+# This is a simple crew that creates a poem.
+# It has a poem_writer agent and a write_poem task.
+# The poem_writer agent is responsible for writing the poem.
+# The write_poem task is responsible for writing the poem.
+# The crew is responsible for creating the poem.
+
 @CrewBase
 class PoemCrew:
     """Poem Crew"""
